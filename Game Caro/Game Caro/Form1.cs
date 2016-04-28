@@ -19,6 +19,7 @@ namespace Game_Caro
         {   
             InitializeComponent();
             caro_board = new ChessBoard();
+            caro_board.createListBricks();
             graphics = pnlMainState.CreateGraphics();
         }
 
@@ -41,6 +42,12 @@ namespace Game_Caro
         {
             // Draw the Chess board
             caro_board.drawCaroBoard(graphics);
+        }
+
+        private void pnlMainState_MouseClick(object sender, MouseEventArgs e)
+        {
+            // To check 
+            caro_board.markChess(e.X, e.Y, graphics);
         }
     }
 }

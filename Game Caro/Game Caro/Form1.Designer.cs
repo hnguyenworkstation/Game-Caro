@@ -136,6 +136,7 @@
             this.pnlMainState.Size = new System.Drawing.Size(501, 501);
             this.pnlMainState.TabIndex = 1;
             this.pnlMainState.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainState_Paint);
+            this.pnlMainState.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlMainState_MouseClick);
             // 
             // aaaaa
             // 

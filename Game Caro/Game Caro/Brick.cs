@@ -19,7 +19,6 @@ namespace Game_Caro
         private int brick_Marked;  // check if the brick is marke
         private Point position;
 
-
         // Getters and Setters of each properties
         public int Num_row
         {
@@ -60,6 +59,9 @@ namespace Game_Caro
             }
         }
 
+        /// <summary>
+        /// Whose Brick
+        /// </summary>
         public int Brick_Marked
         {
             get
@@ -71,6 +73,14 @@ namespace Game_Caro
             {
                 brick_Marked = value;
             }
+        }
+
+        public Brick(int num_row, int num_colum, Point pos, int marked)
+        {
+            Num_column = num_colum;
+            Num_row = num_row;
+            Position = pos;
+            Brick_Marked = marked;
         }
     }
 }

@@ -36,13 +36,24 @@ namespace Game_Caro
         {
             for (int i = 0; i < 21; i++)
             {
-                g.DrawLine(Program.pen, i * Brick.Brick_Width, 0, i * Brick.Brick_Width, _numColumn * Brick.Brick_Height);
+                g.DrawLine(ChessBoard.pen, i * Brick.Brick_Width, 0, i * Brick.Brick_Width, _numColumn * Brick.Brick_Height);
             }
 
             for (int i = 0; i < 21; i++)
             {
-                g.DrawLine(Program.pen, 0, i * Brick.Brick_Height, _numRow * Brick.Brick_Width, i * Brick.Brick_Height);
+                g.DrawLine(ChessBoard.pen, 0, i * Brick.Brick_Height, _numRow * Brick.Brick_Width, i * Brick.Brick_Height);
             }
+        }
+
+        /// <summary>
+        /// Draw a chess on the Board
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="pos"></param>
+        /// <param name="brush"></param>
+        public void createChess(Graphics g, Point pos, SolidBrush brush)
+        {
+            g.FillEllipse(brush, pos.X, pos.Y, Brick.Brick_Width, Brick.Brick_Height);
         }
     }
 }
