@@ -10,11 +10,37 @@ using System.Windows.Forms;
 
 namespace Game_Caro
 {
-    public partial class Form1 : Form
+    public partial class a : Form
     {
-        public Form1()
-        {
+        private ChessBoard caro_board;
+        private Graphics graphics;
+
+        public a()
+        {   
             InitializeComponent();
+            caro_board = new ChessBoard();
+            graphics = pnlMainState.CreateGraphics();
+        }
+
+        private void timerRules_Tick(object sender, EventArgs e)
+        {
+            lblRules.Location = new Point(lblRules.Location.X, lblRules.Location.Y - 1);
+            if (lblRules.Location.Y + lblRules.Height < 0)
+            {
+                lblRules.Location = new Point(lblRules.Location.X, pnlRules.Height);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblRules.Text = "Welcome you to the Caro\nChallenge...!";
+            timerRules.Enabled = true;
+        }
+
+        private void pnlMainState_Paint(object sender, PaintEventArgs e)
+        {
+            // Draw the Chess board
+            caro_board.drawCaroBoard(graphics);
         }
     }
 }
